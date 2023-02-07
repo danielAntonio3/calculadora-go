@@ -72,21 +72,21 @@ func LeerEntrada() string {
 	return scanner.Text()
 }
 
-func main() {
-	operacion := LeerEntrada()
-	// Obtener el operador
-	operator := GetTypeOperation(operacion)
-
-	// Divide la cadena de texto, con un valor como patron de separación
-	valores := strings.Split(operacion, operator)
-
-	// Creamos un objeto de nuestro struct
-	calculadora := Calc{}
-	calculadora.value1 = GetValue(valores[0])
-	calculadora.value2 = GetValue(valores[1])
-	calculadora.operator = operator
-
-	// Realizamos la operación
-	calculadora.GetOperation()
-
-}
+//func main() {
+//	operacion := LeerEntrada()
+//	// Obtener el operador
+//	operator := GetTypeOperation(operacion)
+//
+//	// Divide la cadena de texto, con un valor como patron de separación
+//	valores := strings.Split(operacion, operator)
+//
+//	// Creamos un objeto de nuestro struct
+//	calculadora := Calc{}
+//	calculadora.value1 = GetValue(valores[0])
+//	calculadora.value2 = GetValue(valores[1])
+//	calculadora.operator = operator
+//
+//	// Realizamos la operación
+//	calculadora.GetOperation()
+//
+//}
