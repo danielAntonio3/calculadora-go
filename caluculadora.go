@@ -8,33 +8,36 @@ import (
 	"strings"
 )
 
+// Calc struct
 type Calc struct {
-	value1   int
-	value2   int
-	operator string
+	Value1   int
+	Value2   int
+	Operator string
 }
 
+// GetOperation obtener el resultado de la operación
 func (c Calc) GetOperation() {
 
-	switch c.operator {
+	switch c.Operator {
 	case "+":
-		fmt.Println("La suma es: ", c.value1+c.value2)
+		fmt.Println("La suma es: ", c.Value1+c.Value2)
 	case "-":
-		fmt.Println("La resta es: ", c.value1-c.value2)
+		fmt.Println("La resta es: ", c.Value1-c.Value2)
 	case "*":
-		fmt.Println("La multiplicación es: ", c.value1*c.value2)
+		fmt.Println("La multiplicación es: ", c.Value1*c.Value2)
 	case "/":
-		if c.value2 != 0 {
-			fmt.Println("La division es: ", c.value1/c.value2)
+		if c.Value2 != 0 {
+			fmt.Println("La division es: ", c.Value1/c.Value2)
 			break
 		}
 		fmt.Println("La division no se puedo realizar")
 	default:
-		fmt.Printf("Aun no sopostamos operaciones con %s", c.operator)
+		fmt.Printf("Aun no sopostamos operaciones con %s", c.Operator)
 	}
 
 }
 
+// GetValue obtener el valor de la cadena de entrada
 func GetValue(value string) int {
 	valor, err := strconv.Atoi(value)
 
@@ -44,6 +47,7 @@ func GetValue(value string) int {
 	return valor
 }
 
+// GetTypeOperation obtenemos el signo de la operación
 func GetTypeOperation(operator string) string {
 
 	if strings.Contains(operator, "+") {
@@ -61,6 +65,7 @@ func GetTypeOperation(operator string) string {
 	return "0"
 }
 
+// LeerEntrada para poder escribir en consola la operación
 func LeerEntrada() string {
 	fmt.Print("Escribe una operación (+,-,*,/): ")
 
